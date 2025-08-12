@@ -4,20 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elshan Ahmedov - System/Cloud/DevOps Engineer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+    :root {
+        --primary-color: #28a745;
+        --secondary-color: #218838;
+        --text-color: #333;
+        --bg-color: #f8f9fa;
+        --card-color: #ffffff;
+        --border-color: #ddd;
+    }
+    .dark-mode {
+        --primary-color: #3ddc84;
+        --secondary-color: #2ca25f;
+        --text-color: #f8f9fa;
+        --bg-color: #121212;
+        --card-color: #1e1e1e;
+        --border-color: #333;
+    }
     body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
-        background: #f8f9fa;
-        color: #333;
+        background: var(--bg-color);
+        color: var(--text-color);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow-x: hidden;
+    }
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+        z-index: -1;
+        opacity: 0.3;
+    }
+    .dark-mode::before {
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgwLDAsMCwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
     }
     .sidebar {
         width: 280px;
-        background: #ffffff;
+        background: var(--card-color);
         padding: 20px;
-        border-right: 1px solid #ddd;
+        border-right: 1px solid var(--border-color);
+        transition: all 0.3s ease;
     }
     .sidebar img {
         width: 150px;
@@ -26,28 +61,33 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        transition: transform 0.3s ease;
+    }
+    .sidebar img:hover {
+        transform: scale(1.05);
     }
     .sidebar h1 {
         font-size: 22px;
         margin: 10px 0 5px;
-        color: #28a745;
+        color: var(--primary-color);
         text-align: center;
     }
     .sidebar h2 {
         font-size: 16px;
         font-weight: normal;
-        color: #555;
+        color: var(--text-color);
         margin-bottom: 20px;
         text-align: center;
     }
     .sidebar p, .sidebar a {
         font-size: 14px;
         line-height: 1.5;
-        color: #333;
+        color: var(--text-color);
         text-decoration: none;
+        transition: color 0.3s ease;
     }
     .sidebar a:hover {
-        color: #28a745;
+        color: var(--primary-color);
     }
     .sidebar-section {
         margin-bottom: 20px;
@@ -55,8 +95,8 @@
     .sidebar-section h3 {
         font-size: 18px;
         margin-bottom: 10px;
-        color: #28a745;
-        border-bottom: 2px solid #28a745;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
         display: inline-block;
         padding-bottom: 4px;
     }
@@ -68,15 +108,24 @@
     .content {
         flex: 1;
         padding: 30px;
+        transition: all 0.3s ease;
     }
     .section {
         margin-bottom: 30px;
+        background: var(--card-color);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .dark-mode .section {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
     .section h3 {
         font-size: 20px;
         margin-bottom: 10px;
-        color: #28a745;
-        border-bottom: 2px solid #28a745;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
         display: inline-block;
         padding-bottom: 4px;
     }
@@ -89,7 +138,8 @@
     }
     .job span {
         font-size: 14px;
-        color: #555;
+        color: var(--text-color);
+        opacity: 0.8;
     }
     ul {
         padding-left: 20px;
@@ -99,11 +149,172 @@
         text-align: center;
         margin-bottom: 20px;
     }
+    .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+    .theme-toggle:hover {
+        background: var(--secondary-color);
+        transform: scale(1.1);
+    }
+    .certificate-badge {
+        display: inline-block;
+        margin: 5px;
+        padding: 8px 12px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 20px;
+        font-size: 12px;
+        transition: all 0.3s ease;
+    }
+    .certificate-badge:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .download-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .download-btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .download-btn i {
+        margin-right: 8px;
+    }
+    .testimonial-carousel {
+        margin: 20px 0;
+        position: relative;
+    }
+    .testimonial {
+        background: var(--card-color);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+    }
+    .testimonial-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .testimonial-header img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .testimonial-author {
+        font-weight: bold;
+    }
+    .testimonial-position {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+    .testimonial-date {
+        font-size: 12px;
+        color: var(--primary-color);
+    }
+    .contact-form {
+        margin-top: 20px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        background: var(--card-color);
+        color: var(--text-color);
+    }
+    .contact-form button {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .contact-form button:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+    }
+    .mobile-menu-btn {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 100;
+        align-items: center;
+        justify-content: center;
+    }
+    @media (max-width: 768px) {
+        body {
+            flex-direction: column;
+        }
+        .sidebar {
+            position: fixed;
+            left: -280px;
+            top: 0;
+            bottom: 0;
+            z-index: 90;
+            transition: left 0.3s ease;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .content {
+            margin-left: 0;
+            padding-top: 80px;
+        }
+        .mobile-menu-btn {
+            display: flex;
+        }
+    }
 </style>
 </head>
 <body>
 
-<div class="sidebar">
+<button class="theme-toggle" id="themeToggle">
+    <i class="fas fa-moon"></i>
+</button>
+
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar" id="sidebar">
     <img src="my-photo.jpg" alt="Elshan Ahmedov">
     <h1>Elshan Ahmedov</h1>
     <h2>System / Cloud / Devops Engineer</h2>
@@ -119,16 +330,16 @@
 
     <div class="sidebar-section">
         <h3>Certifications</h3>
-        <ul>
-            <li>AWS Certified Solutions Architect – Associate</li>
-            <li>Azure Administrator Associate (AZ-104)</li>
-            <li>HashiCorp Certified: Terraform Associate</li>
-            <li>CKA: Certified Kubernetes Administrator</li>
-            <li>Red Hat Certified Engineer (RHCE)</li>
-            <li>Red Hat Certified System Administrator (RHCSA)</li>
-            <li>VMware Certified Professional – Data Center Virtualization 2019</li>
-            <li>VMware Specialist - vSAN 2020</li>
-        </ul>
+        <div>
+            <span class="certificate-badge">AWS Solutions Architect</span>
+            <span class="certificate-badge">Azure AZ-104</span>
+            <span class="certificate-badge">Terraform</span>
+            <span class="certificate-badge">CKA</span>
+            <span class="certificate-badge">RHCE</span>
+            <span class="certificate-badge">RHCSA</span>
+            <span class="certificate-badge">VMware VCP</span>
+            <span class="certificate-badge">vSAN</span>
+        </div>
     </div>
 
     <div class="sidebar-section">
@@ -142,6 +353,20 @@
     <div class="sidebar-section">
         <h3>Education</h3>
         <p>Bachelor of Science: Computerized Information System and Computing Tech. - Azerbaijan State Oil Academy (09/2008-09/2012)</p>
+    </div>
+
+    <a href="#" class="download-btn">
+        <i class="fas fa-download"></i> Download PDF
+    </a>
+
+    <div class="sidebar-section contact-form">
+        <h3>Contact Me</h3>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
 </div>
 
@@ -170,6 +395,22 @@
             <li>Automated secrets management using AWS Secrets Manager and HashiCorp Vault for secure credential handling</li>
             <li>Configured and managed HAProxy load balancers, including SSL certificate generation and renewal to ensure secure and reliable traffic distribution</li>
         </ul>
+    </div>
+
+    <div class="section testimonial-carousel">
+        <h3>Recommendations</h3>
+        <div class="testimonial">
+            <div class="testimonial-header">
+                <img src="https://media.licdn.com/dms/image/D5603AQFbQ5Jh1B1nCg/profile-displayphoto-shrink_100_100/0/1679667310107?e=1721260800&v=beta&t=4Gz1VJQe5Qw0m3b7Q7Q3Q3Q3Q3Q3Q3Q3Q3Q3Q3Q3Q3Q" alt="Fakhri Huseynov">
+                <div>
+                    <div class="testimonial-author">Fakhri Huseynov</div>
+                    <div class="testimonial-position">Azure Cloud Engineer | DevOps | Azure DevOps | Cloud Engineer</div>
+                    <div class="testimonial-date">March 30, 2023</div>
+                </div>
+            </div>
+            <p>I am writing this letter to highly recommend Elshan Ahmedov for any IT engineering position that he may be seeking. I had the pleasure of working closely with Elshan for 2 years at PMD and Pasha Tech, where we collaborated on various IT projects.</p>
+            <p>Elshan is an exceptionally talented System engineer with a strong technical background and a keen eye for detail. He is highly proficient in a variety of programming languages, including Powershell, python, and general administration such as Data Center Administration, and Clustering. His deep understanding of these technologies and his ability to make an efficient impact on the virtualization world of system engineering.</p>
+        </div>
     </div>
 
     <div class="section">
@@ -331,6 +572,51 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Dark/Light Mode Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const icon = themeToggle.querySelector('i');
+        if (body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    });
+
+    // Mobile Navigation
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const sidebar = document.getElementById('sidebar');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+    });
+
+    // Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+    }
+
+    // Download Button
+    const downloadBtn = document.querySelector('.download-btn');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('PDF download would be implemented here with your actual PDF file.');
+        });
+    }
+</script>
 
 </body>
 </html>
