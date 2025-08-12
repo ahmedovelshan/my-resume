@@ -4,39 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elshan Ahmedov - System/Cloud/DevOps Engineer</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    :root {
-        --primary-color: #28a745;
-        --secondary-color: #218838;
-        --text-color: #333;
-        --bg-color: #f8f9fa;
-        --card-color: #ffffff;
-        --border-color: #ddd;
-    }
-    .dark-mode {
-        --primary-color: #3ddc84;
-        --secondary-color: #2ca25f;
-        --text-color: #f8f9fa;
-        --bg-color: #121212;
-        --card-color: #1e1e1e;
-        --border-color: #333;
-    }
     body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
-        background: var(--bg-color);
-        color: var(--text-color);
-        transition: all 0.3s ease;
+        background: #f8f9fa;
+        color: #333;
     }
     .sidebar {
         width: 280px;
-        background: var(--card-color);
+        background: #ffffff;
         padding: 20px;
-        border-right: 1px solid var(--border-color);
-        transition: all 0.3s ease;
+        border-right: 1px solid #ddd;
     }
     .sidebar img {
         width: 150px;
@@ -49,25 +30,24 @@
     .sidebar h1 {
         font-size: 22px;
         margin: 10px 0 5px;
-        color: var(--primary-color);
+        color: #28a745;
         text-align: center;
     }
     .sidebar h2 {
         font-size: 16px;
         font-weight: normal;
-        color: var(--text-color);
+        color: #555;
         margin-bottom: 20px;
         text-align: center;
     }
     .sidebar p, .sidebar a {
         font-size: 14px;
         line-height: 1.5;
-        color: var(--text-color);
+        color: #333;
         text-decoration: none;
-        transition: color 0.3s ease;
     }
     .sidebar a:hover {
-        color: var(--primary-color);
+        color: #28a745;
     }
     .sidebar-section {
         margin-bottom: 20px;
@@ -75,8 +55,8 @@
     .sidebar-section h3 {
         font-size: 18px;
         margin-bottom: 10px;
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
+        color: #28a745;
+        border-bottom: 2px solid #28a745;
         display: inline-block;
         padding-bottom: 4px;
     }
@@ -88,24 +68,15 @@
     .content {
         flex: 1;
         padding: 30px;
-        transition: all 0.3s ease;
     }
     .section {
         margin-bottom: 30px;
-        background: var(--card-color);
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-    }
-    .dark-mode .section {
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
     .section h3 {
         font-size: 20px;
         margin-bottom: 10px;
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
+        color: #28a745;
+        border-bottom: 2px solid #28a745;
         display: inline-block;
         padding-bottom: 4px;
     }
@@ -118,8 +89,7 @@
     }
     .job span {
         font-size: 14px;
-        color: var(--text-color);
-        opacity: 0.8;
+        color: #555;
     }
     ul {
         padding-left: 20px;
@@ -129,80 +99,11 @@
         text-align: center;
         margin-bottom: 20px;
     }
-    .theme-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 100;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
-    }
-    .theme-toggle:hover {
-        background: var(--secondary-color);
-        transform: scale(1.1);
-    }
-    .mobile-menu-btn {
-        display: none;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        z-index: 100;
-        align-items: center;
-        justify-content: center;
-    }
-    @media (max-width: 768px) {
-        body {
-            flex-direction: column;
-        }
-        .sidebar {
-            position: fixed;
-            left: -280px;
-            top: 0;
-            bottom: 0;
-            z-index: 90;
-            transition: left 0.3s ease;
-        }
-        .sidebar.active {
-            left: 0;
-        }
-        .content {
-            margin-left: 0;
-            padding-top: 80px;
-        }
-        .mobile-menu-btn {
-            display: flex;
-        }
-    }
 </style>
 </head>
 <body>
 
-<button class="theme-toggle" id="themeToggle">
-    <i class="fas fa-moon"></i>
-</button>
-
-<button class="mobile-menu-btn" id="mobileMenuBtn">
-    <i class="fas fa-bars"></i>
-</button>
-
-<div class="sidebar" id="sidebar">
+<div class="sidebar">
     <img src="my-photo.jpg" alt="Elshan Ahmedov">
     <h1>Elshan Ahmedov</h1>
     <h2>System / Cloud / Devops Engineer</h2>
@@ -214,6 +115,33 @@
         <p>✉ <a href="mailto:ahmedovelshan@gmail.com">ahmedovelshan@gmail.com</a></p>
         <p>🔗 <a href="https://www.linkedin.com/in/ahmedovelshan" target="_blank">LinkedIn</a></p>
         <p>💻 <a href="https://github.com/ahmedovelshan" target="_blank">GitHub</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h3>Certifications</h3>
+        <ul>
+            <li>AWS Certified Solutions Architect – Associate</li>
+            <li>Azure Administrator Associate (AZ-104)</li>
+            <li>HashiCorp Certified: Terraform Associate</li>
+            <li>CKA: Certified Kubernetes Administrator</li>
+            <li>Red Hat Certified Engineer (RHCE)</li>
+            <li>Red Hat Certified System Administrator (RHCSA)</li>
+            <li>VMware Certified Professional – Data Center Virtualization 2019</li>
+            <li>VMware Specialist - vSAN 2020</li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
+        <h3>Languages</h3>
+        <ul>
+            <li>English — B2 (Upper-Intermediate)</li>
+            <li>Russian — B1 (Intermediate)</li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
+        <h3>Education</h3>
+        <p>Bachelor of Science: Computerized Information System and Computing Tech. - Azerbaijan State Oil Academy (09/2008-09/2012)</p>
     </div>
 </div>
 
@@ -242,33 +170,6 @@
             <li>Automated secrets management using AWS Secrets Manager and HashiCorp Vault for secure credential handling</li>
             <li>Configured and managed HAProxy load balancers, including SSL certificate generation and renewal to ensure secure and reliable traffic distribution</li>
         </ul>
-    </div>
-
-    <div class="section">
-        <h3>Certifications</h3>
-        <ul>
-            <li>AWS Certified Solutions Architect – Associate</li>
-            <li>Azure Administrator Associate (AZ-104)</li>
-            <li>HashiCorp Certified: Terraform Associate</li>
-            <li>CKA: Certified Kubernetes Administrator</li>
-            <li>Red Hat Certified Engineer (RHCE)</li>
-            <li>Red Hat Certified System Administrator (RHCSA)</li>
-            <li>VMware Certified Professional – Data Center Virtualization 2019</li>
-            <li>VMware Specialist - vSAN 2020</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>Languages</h3>
-        <ul>
-            <li>English — B2 (Upper-Intermediate)</li>
-            <li>Russian — B1 (Intermediate)</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>Education</h3>
-        <p>Bachelor of Science: Computerized Information System and Computing Tech. - Azerbaijan State Oil Academy (09/2008-09/2012)</p>
     </div>
 
     <div class="section">
@@ -430,32 +331,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    // Dark/Light Mode Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        const icon = themeToggle.querySelector('i');
-        if (body.classList.contains('dark-mode')) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        }
-    });
-
-    // Mobile Navigation
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const sidebar = document.getElementById('sidebar');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-    });
-</script>
 
 </body>
 </html>
