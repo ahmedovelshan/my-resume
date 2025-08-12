@@ -75,12 +75,19 @@
         padding-left: 20px;
         font-size: 14px;
     }
+    .two-column {
+        display: flex;
+        gap: 40px;
+    }
+    .two-column .col {
+        flex: 1;
+    }
 </style>
 </head>
 <body>
 
 <div class="sidebar">
-    <img src="my-photo.jpg" alt="Elshan Ahmedov">
+    <img src="your-photo.jpg" alt="Elshan Ahmedov">
     <h1>Elshan Ahmedov</h1>
     <h2>DevOps / Cloud / System Engineer</h2>
     <p>📍 Tbilisi, Georgia</p>
@@ -110,6 +117,29 @@
             <li><b>Security:</b> IAM, VPN, Firewalls</li>
             <li><b>Virtualization:</b> VMware, Hyper-V</li>
         </ul>
+    </div>
+
+    <div class="section two-column">
+        <div class="col">
+            <h3>Certifications</h3>
+            <ul>
+                <li>AWS Certified Solutions Architect – Associate</li>
+                <li>Azure Administrator Associate (AZ-104)</li>
+                <li>HashiCorp Certified: Terraform Associate</li>
+                <li>CKA: Certified Kubernetes Administrator</li>
+                <li>Red Hat Certified Engineer (RHCE)</li>
+                <li>Red Hat Certified System Administrator (RHCSA)</li>
+                <li>VMware Certified Professional – Data Center Virtualization 2019</li>
+                <li>VMware Specialist - vSAN 2020</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Languages</h3>
+            <ul>
+                <li>English — B2 (Upper-Intermediate)</li>
+                <li>Russian — B1 (Intermediate)</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
