@@ -1,3 +1,6 @@
+I'll help customize your GitHub resume page by moving the Certifications, Languages, and Education sections to the left sidebar while maintaining all your content. Here's the updated index.html file with an improved layout:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,23 +21,27 @@
         background: #ffffff;
         padding: 20px;
         border-right: 1px solid #ddd;
-        text-align: center;
     }
     .sidebar img {
         width: 150px;
         border-radius: 50%;
         margin-bottom: 15px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     .sidebar h1 {
         font-size: 22px;
         margin: 10px 0 5px;
         color: #28a745;
+        text-align: center;
     }
     .sidebar h2 {
         font-size: 16px;
         font-weight: normal;
         color: #555;
         margin-bottom: 20px;
+        text-align: center;
     }
     .sidebar p, .sidebar a {
         font-size: 14px;
@@ -44,6 +51,22 @@
     }
     .sidebar a:hover {
         color: #28a745;
+    }
+    .sidebar-section {
+        margin-bottom: 20px;
+    }
+    .sidebar-section h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #28a745;
+        border-bottom: 2px solid #28a745;
+        display: inline-block;
+        padding-bottom: 4px;
+    }
+    .sidebar ul {
+        padding-left: 20px;
+        font-size: 14px;
+        margin-top: 5px;
     }
     .content {
         flex: 1;
@@ -75,12 +98,9 @@
         padding-left: 20px;
         font-size: 14px;
     }
-    .two-column {
-        display: flex;
-        gap: 40px;
-    }
-    .two-column .col {
-        flex: 1;
+    .contact-info {
+        text-align: center;
+        margin-bottom: 20px;
     }
 </style>
 </head>
@@ -90,12 +110,42 @@
     <img src="my-photo.jpg" alt="Elshan Ahmedov">
     <h1>Elshan Ahmedov</h1>
     <h2>System / Cloud / Devops Engineer</h2>
-    <p>📍 Tbilisi, Georgia</p>
-    <p>📞 +994 709 959 185</p>
-    <p>📞 +995 574 330 106</p>
-    <p>✉ <a href="mailto:ahmedovelshan@gmail.com">ahmedovelshan@gmail.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/ahmedovelshan" target="_blank">LinkedIn</a></p>
-    <p>💻 <a href="https://github.com/ahmedovelshan" target="_blank">GitHub</a></p>
+    
+    <div class="contact-info">
+        <p>📍 Tbilisi, Georgia</p>
+        <p>📞 +994 709 959 185</p>
+        <p>📞 +995 574 330 106</p>
+        <p>✉ <a href="mailto:ahmedovelshan@gmail.com">ahmedovelshan@gmail.com</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/ahmedovelshan" target="_blank">LinkedIn</a></p>
+        <p>💻 <a href="https://github.com/ahmedovelshan" target="_blank">GitHub</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h3>Certifications</h3>
+        <ul>
+            <li>AWS Certified Solutions Architect – Associate</li>
+            <li>Azure Administrator Associate (AZ-104)</li>
+            <li>HashiCorp Certified: Terraform Associate</li>
+            <li>CKA: Certified Kubernetes Administrator</li>
+            <li>Red Hat Certified Engineer (RHCE)</li>
+            <li>Red Hat Certified System Administrator (RHCSA)</li>
+            <li>VMware Certified Professional – Data Center Virtualization 2019</li>
+            <li>VMware Specialist - vSAN 2020</li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
+        <h3>Languages</h3>
+        <ul>
+            <li>English — B2 (Upper-Intermediate)</li>
+            <li>Russian — B1 (Intermediate)</li>
+        </ul>
+    </div>
+
+    <div class="sidebar-section">
+        <h3>Education</h3>
+        <p>Bachelor of Science: Computerized Information System and Computing Tech. - Azerbaijan State Oil Academy (09/2008-09/2012)</p>
+    </div>
 </div>
 
 <div class="content">
@@ -123,33 +173,6 @@
             <li>Automated secrets management using AWS Secrets Manager and HashiCorp Vault for secure credential handling</li>
             <li>Configured and managed HAProxy load balancers, including SSL certificate generation and renewal to ensure secure and reliable traffic distribution</li>
         </ul>
-    </div>
-
-    <div class="section three-column">
-        <div class="col">
-            <h3>Certifications</h3>
-            <ul>
-                <li>AWS Certified Solutions Architect – Associate</li>
-                <li>Azure Administrator Associate (AZ-104)</li>
-                <li>HashiCorp Certified: Terraform Associate</li>
-                <li>CKA: Certified Kubernetes Administrator</li>
-                <li>Red Hat Certified Engineer (RHCE)</li>
-                <li>Red Hat Certified System Administrator (RHCSA)</li>
-                <li>VMware Certified Professional – Data Center Virtualization 2019</li>
-                <li>VMware Specialist - vSAN 2020</li>
-            </ul>
-        </div>
-        <div class="col">
-            <h3>Languages</h3>
-            <ul>
-                <li>English — B2 (Upper-Intermediate)</li>
-                <li>Russian — B1 (Intermediate)</li>
-            </ul>
-        </div>
-        <div class="col">
-            <h3>Education</h3>
-            <p>Bachelor of Science: Computerized Information System and Computing Tech. - Azerbaijan State Oil Academy (09/2008-09/2012)</p>
-        </div>
     </div>
 
     <div class="section">
@@ -309,13 +332,9 @@
             <span>Sep 2013 – Sep 2016</span>
             <span>Azerbaijan, Baku</span>
         </div>
-
-
-
-        <!-- Add other experiences as needed -->
     </div>
-
 </div>
 
 </body>
 </html>
+```
